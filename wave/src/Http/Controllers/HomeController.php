@@ -29,6 +29,9 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo'));
+        $portfolioCategories = [];
+        $projects = [];
+
+        return view('theme::home', compact('seo', 'portfolioCategories', 'projects'));
     }
 }

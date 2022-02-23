@@ -6,35 +6,35 @@ Route::get('/', '\Wave\Http\Controllers\HomeController@index')->name('wave.home'
 Route::get('@{username}', '\Wave\Http\Controllers\ProfileController@index')->name('wave.profile');
 
 // Documentation routes
-Route::view('docs/{page?}', 'docs::index')->where('page', '(.*)');
+// Route::view('docs/{page?}', 'docs::index')->where('page', '(.*)');
 
 // Additional Auth Routes
-Route::get('logout', 'Auth\LoginController@logout')->name('wave.logout');
-Route::get('user/verify/{verification_code}', 'Auth\RegisterController@verify')->name('verify');
-Route::post('register/complete', '\Wave\Http\Controllers\Auth\RegisterController@complete')->name('wave.register-complete');
+// Route::get('logout', 'Auth\LoginController@logout')->name('wave.logout');
+// Route::get('user/verify/{verification_code}', 'Auth\RegisterController@verify')->name('verify');
+// Route::post('register/complete', '\Wave\Http\Controllers\Auth\RegisterController@complete')->name('wave.register-complete');
 
 Route::get('blog', '\Wave\Http\Controllers\BlogController@index')->name('wave.blog');
 Route::get('blog/{category}', '\Wave\Http\Controllers\BlogController@category')->name('wave.blog.category');
 Route::get('blog/{category}/{post}', '\Wave\Http\Controllers\BlogController@post')->name('wave.blog.post');
 
-Route::view('install', 'wave::install')->name('wave.install');
+// Route::view('install', 'wave::install')->name('wave.install');
 
 /***** Pages *****/
 Route::get('p/{page}', '\Wave\Http\Controllers\PageController@page');
 
 /***** Pricing Page *****/
-Route::view('pricing', 'theme::pricing')->name('wave.pricing');
+// Route::view('pricing', 'theme::pricing')->name('wave.pricing');
 
 /***** Billing Routes *****/
-Route::post('/billing/webhook', '\Wave\Http\Controllers\WebhookController@handleWebhook');
-Route::post('paddle/webhook', '\Wave\Http\Controllers\SubscriptionController@hook');
-Route::post('checkout', '\Wave\Http\Controllers\SubscriptionController@checkout')->name('checkout');
+// Route::post('/billing/webhook', '\Wave\Http\Controllers\WebhookController@handleWebhook');
+// Route::post('paddle/webhook', '\Wave\Http\Controllers\SubscriptionController@hook');
+// Route::post('checkout', '\Wave\Http\Controllers\SubscriptionController@checkout')->name('checkout');
 
-Route::get('test', '\Wave\Http\Controllers\SubscriptionController@test');
+// Route::get('test', '\Wave\Http\Controllers\SubscriptionController@test');
 
-Route::group(['middleware' => 'wave'], function () {
-	Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
-});
+// Route::group(['middleware' => 'wave'], function () {
+// 	Route::get('dashboard', '\Wave\Http\Controllers\DashboardController@index')->name('wave.dashboard');
+// });
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('settings/{section?}', '\Wave\Http\Controllers\SettingsController@index')->name('wave.settings');
