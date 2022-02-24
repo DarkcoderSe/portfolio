@@ -20,5 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::post('contact-us', 'ContactController@submit');
+
 // Include Wave Routes
 Wave::routes();

@@ -434,13 +434,13 @@
             </div>
             <div class="row">
                 <div class="margin-eleven no-margin-bottom no-margin-lr">
-                    <div class="col-md-3 col-sm-12 text-center xs-margin-eleven xs-no-margin-top xs-no-margin-lr">
+                    {{-- <div class="col-md-3 col-sm-12 text-center xs-margin-eleven xs-no-margin-top xs-no-margin-lr">
                         <!-- filter navigation -->
                         <ul class="portfolio-filter sm-text-small nav nav-tabs no-border portfolio-filter-tab-style-5 alt-font text-uppercase letter-spacing-1 text-large">
-                            <li class="nav active xs-display-inline xs-width-100 xs-text-center"><a href="#" data-filter="*" class="position-relative xs-display-inline">All</a></li>
+                            <li class="nav active xs-display-inline xs-width-100 xs-text-center"><a href="javascript:void(0)" data-filter="*" class="position-relative xs-display-inline">All</a></li>
                             @if(count($portfolioCategories) > 0)
                             @foreach($portfolioCategories as $category)
-                            <li class="nav xs-display-inline xs-width-100 xs-text-center"><a href="#" data-filter=".{{ $category->name }}" class="position-relative xs-display-inline">{{ $category->display_name }} </a></li>
+                            <li class="nav xs-display-inline xs-width-100 xs-text-center"><a href="javascript:void(0)" data-filter=".{{ $category->name }}" class="position-relative xs-display-inline">{{ $category->display_name }} </a></li>
                             @endforeach
                             @endif
                             <!-- <li class="nav xs-display-inline xs-width-100 xs-text-center"><a href="#" data-filter=".web" class="position-relative xs-display-inline">Web Development</a></li>
@@ -449,16 +449,16 @@
                             <li class="nav xs-display-inline xs-width-100 xs-text-center"><a href="#" data-filter=".art" class="position-relative xs-display-inline">Art</a></li> -->
                         </ul>
                         <!-- end filter navigation -->
-                    </div>
-                    <div class="col-md-9 col-sm-12">
+                    </div> --}}
+                    <div class="col-md-12 col-sm-12">
                         <div class="grid-gallery grid-style1 overflow-hidden">
                             <div class="tab-content personal-tab-content">
-                                <ul class="masonry-items grid">
+                                <ul class="row">
                                     @if(count($projects) > 0)
                                     @foreach($projects as $project)
-                                    <li class="{{ $project->Category->name }}">
+                                    <li class="col-md-4 {{ $project->category->name ?? 'x' }}">
                                         <figure>
-                                            <div class="gallery-img"><a class="work-details-popup"><img src="{{ URL::to('/themes/portfolio/projects', $project->main_image) }}" alt="loading..."></a></div>
+                                            <div class="gallery-img"><a class="work-details-popup"><img src="{{ URL::to('storage/'. $project->main_image) }}" alt="loading..."></a></div>
                                             <figcaption>
                                                 <h3 class="text-large alt-font xs-margin-two xs-no-margin-lr text-uppercase letter-spacing-2 md-no-padding sm-no-padding">{{ $project->title }} <span class="text-small gray-text alt-font text-uppercase letter-spacing-2 display-block">{{ $project->type }} </span></h3>
                                             </figcaption>
@@ -467,13 +467,13 @@
                                         <div class="popup-info">
                                             <div class="popup-main bg-white">
                                                 <!-- popup title -->
-                                                <section class="no-padding fix-background" style="background-image:url('{{ URL::to('/themes/portfolio/projects', $project->main_image) }} ');">
+                                                <section class="no-padding fix-background" style="background-image:url('{{ URL::to('storage/'. $project->main_image) }} ');">
                                                     <div class="opacity-medium bg-dark-gray"></div>
                                                     <div class="container full-screen position-relative">
                                                         <div class="slider-typography text-center">
                                                             <div class="slider-text-middle-main">
                                                                 <div class="slider-text-middle">
-                                                                    <span class="alt-font font-weight-600 white-text title-extra-large letter-spacing-2 text-uppercase ajax-popup-title-text">{{ $project->main_image }} </span>
+                                                                    <span class="alt-font font-weight-600 white-text title-extra-large letter-spacing-2 text-uppercase ajax-popup-title-text">{{ $project->title }} </span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -503,9 +503,9 @@
                                                 <section class="no-padding">
                                                     <div class="container-fluid">
                                                         <div class="row">
-                                                            <div class="col-md-4 col-sm-12 text-center"><img src="{{ URL::to('/themes/portfolio/projects', $project->image1) }}" alt=""/></div>
-                                                            <div class="col-md-4 col-sm-12 text-center sm-margin-five sm-no-margin-lr"><img src="{{ URL::to('/themes/portfolio/projects', $project->image2) }}" alt=""/></div>
-                                                            <div class="col-md-4 col-sm-12 text-center"><img src="{{ URL::to('/themes/portfolio/projects', $project->image3) }}" alt=""/></div>
+                                                            <div class="col-md-4 col-sm-12 text-center"><img src="{{ URL::to('storage/'. $project->image1) }}" alt=""/></div>
+                                                            <div class="col-md-4 col-sm-12 text-center sm-margin-five sm-no-margin-lr"><img src="{{ URL::to('storage/'. $project->image2) }}" alt=""/></div>
+                                                            <div class="col-md-4 col-sm-12 text-center"><img src="{{ URL::to('storage/'. $project->image3) }}" alt=""/></div>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -575,7 +575,7 @@
             <div class="row">
                 <div class="margin-five no-margin-bottom blog-post blog-post-style5 no-margin-lr">
                     <div class="col-md-6 col-sm-12">
-                        <form id="personalcontactform" action="{{ URL::to('/contact') }}" method="post">
+                        <form id="personalcontactform" action="{{ URL::to('/contact-us') }}" method="post">
 
                             @if($errors->any())
 
@@ -587,6 +587,10 @@
 
                             @endif
 
+                            @if (session('message'))
+                                <div class="alert alert-error">{{ session('message') }} </div>
+                            @endif
+
                             <div id="success" class="no-margin-lr"></div>
                             <!-- input -->
                             <input type="text" name="name" id="name" placeholder="* YOUR NAME" class="big-input alt-font">
@@ -596,7 +600,7 @@
                             <!-- end input -->
                             <!-- dropdown  -->
                             <div class="select-style big-select alt-font">
-                                <select id="interestedin" name="type">
+                                <select id="purpose" name="type" required>
                                     <option selected>WHAT ARE YOU INTERESTED IN?</option>
                                     <option value="Web Development">Web Development</option>
                                     <option value="Mobile Application">Mobile Application</option>

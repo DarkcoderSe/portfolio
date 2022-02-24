@@ -67,17 +67,17 @@
         <!-- menu navigation -->
         <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.nav.js')}}"></script>
         <!-- animation -->
-        {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/wow.min.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/wow.min.js')}}"></script>
         <!-- page scroll -->
         <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/page-scroll.js')}}"></script>
         <!-- owl carousel -->
         <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/owl.carousel.min.js')}}"></script>
         <!-- counter -->
-        {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.countTo.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.countTo.js')}}"></script>
         <!-- parallax -->
-        {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.parallax-1.1.3.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.parallax-1.1.3.js')}}"></script>
         <!-- magnific popup -->
-        {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.magnific-popup.min.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.magnific-popup.min.js')}}"></script>
         <!-- portfolio with shorting tab -->
         {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/isotope.pkgd.min.js')}}"></script> --}}
         <!-- images loaded -->
@@ -90,6 +90,12 @@
         {{-- <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/jquery.fitvids.js')}}"></script> --}}
         <!-- setting -->
         <script type="text/javascript" src="{{ URL::to('/themes/portfolio/js/main.js')}}"></script>
+
+        <script>
+        @if (session('message'))
+        toastr.success({{ session('message') }});
+        @endif 
+        </script>
 
     </body>
 </html>

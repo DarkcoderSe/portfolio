@@ -67,6 +67,9 @@
     @if(session('message'))
         <script>setTimeout(function(){ popToast("{{ session('message_type') }}", "{{ session('message') }}"); }, 10);</script>
     @endif
+
+    @include('theme::partials.footer')
+
     @waveCheckout
 
 </body>

@@ -4,6 +4,9 @@ namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\PortfolioCategory;
+use App\Portfolio;
+
 class HomeController extends \App\Http\Controllers\Controller
 {
 
@@ -29,8 +32,8 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        $portfolioCategories = [];
-        $projects = [];
+        $portfolioCategories = PortfolioCategory::all();
+        $projects = Portfolio::all();
 
         return view('theme::home', compact('seo', 'portfolioCategories', 'projects'));
     }
