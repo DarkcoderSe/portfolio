@@ -129,26 +129,7 @@
                     </div>
                     <!-- end features item -->
                 </div>
-                <!-- <div class="col-lg-4 col-md-12 col-sm-12 no-padding"> -->
-                    <!-- features item -->
-                    <!-- <div class="col-lg-12 col-md-6 col-sm-6 no-padding xs-margin-seven xs-display-inline-block xs-no-margin-lr margin-twenty-five no-margin-lr no-margin-top sm-margin-fifteen sm-no-margin-lr sm-no-margin-top">
-                        <div class="col-md-2 col-sm-2 col-xs-3 no-padding"><i class="icon-trophy icon-medium"></i></div>
-                        <div class="col-md-10 col-sm-10 col-xs-9 no-padding-left">
-                            <span class="margin-three display-block no-margin-top alt-font no-margin-lr text-uppercase letter-spacing-1 black-text">Illustrator</span>
-                            <p class="width-90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                        </div>
-                    </div> -->
-                    <!-- end features item -->
-                    <!-- features item -->
-                    <!-- <div class="col-lg-12 col-md-6 col-sm-6 no-padding xs-margin-seven xs-display-inline-block xs-no-margin-lr no-margin sm-margin-fifteen sm-no-margin-lr sm-no-margin-top">
-                        <div class="col-md-2 col-sm-2 col-xs-3 no-padding"><i class="icon-scissors icon-medium"></i></div>
-                        <div class="col-md-10 col-sm-10 col-xs-9 no-padding-left">
-                            <span class="margin-three display-block no-margin-top alt-font no-margin-lr text-uppercase letter-spacing-1 black-text">Fireworks</span>
-                            <p class="width-90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                        </div>
-                    </div> -->
-                    <!-- end features item -->
-                <!-- </div> -->
+               
                 <div class="col-lg-4 col-md-12 col-sm-12 no-padding">
                     <!-- features item -->
                     <div class="col-lg-12 col-md-6 col-sm-6 no-padding xs-margin-seven xs-no-margin-lr xs-display-inline-block margin-twenty-five no-margin-lr no-margin-top md-no-margin-bottom">
@@ -157,7 +138,7 @@
                             <span class="margin-three display-block no-margin-top alt-font no-margin-lr text-uppercase letter-spacing-1 black-text">Web Development</span>
                             <p class="width-90">
                                 <b>Back-end:</b>
-                                PHP (Laravel, Wordpress), NodeJS/ExpressJS, SQL databases, in-memory databases (Redis), microservice and 3-Tier architectures. Designed and maintained several web app backends with ~100k LoC.
+                                PHP Laravel, NodeJS/ExpressJS, SQL databases, ElasticSearch, in-memory databases (Redis/Memcached), microservice and 3-Tier architectures. Designed and maintained several web app backends with ~100k LoC.
                                 <br>
                                 <b>Front-end:</b>
                                 Livewire, JavaScript ECMA6+, ReactJS, Bootstrap, TailwindCSS and, JQuery.
@@ -169,8 +150,8 @@
                     <div class="col-lg-12 col-md-6 col-sm-6 xs-margin-seven xs-no-margin-lr xs-display-inline-block no-padding no-margin no-margin-bottom">
                         <div class="col-md-2 col-sm-2 col-xs-3 no-padding"><i class="icon-tools icon-medium"></i></div>
                         <div class="col-md-10 col-sm-10 col-xs-9 no-padding-left">
-                            <span class="margin-three display-block no-margin-top alt-font no-margin-lr text-uppercase letter-spacing-1 black-text">Graphic Designing</span>
-                            <p class="width-90">Build Android Native Application with JAVA. Used some packages/liberaries/APIs like Volley/Retrofit, Picasso, YoutubeAPI and Card/RecyclerView.</p>
+                            <span class="margin-three display-block no-margin-top alt-font no-margin-lr text-uppercase letter-spacing-1 black-text">Dev Ops</span>
+                            <p class="width-90">Worked on Docker, DO, AWS (ECS, Lambda, OpenSearch, RDS, Secret Manager, API Gateway ElastiCache), and Terraform</p>
                         </div>
                     </div>
                     <!-- end features item -->
