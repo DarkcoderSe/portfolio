@@ -16,7 +16,7 @@
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin-404'], function () {
     Voyager::routes();
 });
 
